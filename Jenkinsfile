@@ -53,11 +53,11 @@ pipeline{
    {
      steps {
        rtDownload (
-                         serverId: 'ARTIFACTORY_SERVER',
+                         serverId: 'Artifactory_Server',
                      spec: '''{
                              "files": [
                                       {
-                                      "pattern": "art-doc-dev-loc/my-app-1.0-SNAPSHOT.jar",
+                                      "pattern": "art-dev-1.0/simplecalculator-0.0.1-SNAPSHOT.jar",
                                       "target": "bazinga/"
                                     }
                                 ]
