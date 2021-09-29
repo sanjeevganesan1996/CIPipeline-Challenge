@@ -30,6 +30,28 @@ pipeline{
         }
         }
      
+     stage("Build & SonarQube analysis") {
+            agent any
+            steps {
+               script{
+                    last_started=env.STAGE_NAME
+            }
+              withSonarQubeEnv('Sonar-CI2') {
+                 
+                sh 'java -version'
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+          }
+     stage("Quality gate") {
+            steps {
+               script{
+                  last_started=env.STAGE_NAME
+            }
+                waitForQualityGate abortPipeline: true
+            }
+        }
+     
      stage('Deploy to artifactory'){
         steps{
            script{
