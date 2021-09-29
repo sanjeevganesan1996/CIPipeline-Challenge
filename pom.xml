@@ -18,6 +18,7 @@
    <maven.compiler.target>1.7</maven.compiler.target>
   <sonar.organization>sanjeevganesan1996</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.projectKey>sanjeevganesan1996_CIPipeline-Challenge</sonar.projectKey>
   </properties>
 
 
